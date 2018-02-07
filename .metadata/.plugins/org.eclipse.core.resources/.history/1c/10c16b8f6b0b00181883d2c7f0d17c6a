@@ -1,0 +1,42 @@
+package HiddenDivisionPopup;
+
+import java.util.Date;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SelectingTodaysdateonClearTrip {
+
+	static
+	{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+	}
+	public static void main(String[] args) throws InterruptedException {
+		
+		String replacedDate = "";
+		Date date = new Date();
+		System.out.println(date);
+		String s1 = date.toString();
+		String[] s2 = s1.split(" ");
+		System.out.println(s2[2]);
+		String todayDate = s2[2];
+		
+		if(todayDate.startsWith("0"))
+		{
+			replacedDate = todayDate.replaceAll("0", "");
+		}
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.cleartrip.com/");
+		
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("DepartDate")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.linkText(replacedDate)).click();
+		System.out.println(replacedDate);
+	}
+
+}

@@ -1,0 +1,24 @@
+//WAP to select Tomorrow's date on clear trip site
+package HiddenDivisionPopup;
+
+import java.time.LocalDate;
+
+public class SelectingtomorrowsdateonClearTrip {
+	
+	static
+	{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+	}
+
+	public static void main(String[] args) {
+		
+		LocalDate tomDate = LocalDate.now().plusDays(1);
+		System.out.println(tomDate);
+		
+		String convertedDate = tomDate.toString();
+		String[] extractedDate = convertedDate.split("-");
+		String date = extractedDate[2];
+		System.out.println(date);
+	}
+
+}

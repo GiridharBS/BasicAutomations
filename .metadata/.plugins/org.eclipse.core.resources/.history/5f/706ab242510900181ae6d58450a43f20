@@ -1,0 +1,14 @@
+package HiddenDivisionPopup;
+
+public class SelectingTodaysdateonClearTrip {
+
+	static
+	{
+		System.setProperty("webdriver.driver.chrome", "./driver/chromedriver.exe");
+	}
+	public static void main(String[] args) {
+	
+
+	}
+
+}
